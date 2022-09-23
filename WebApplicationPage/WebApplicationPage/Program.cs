@@ -32,6 +32,8 @@ builder.Services.AddSingleton<IUriService>(o =>
     return new UriService(uri);
 });
 
+
+
 //Fix cors
 builder.Services.AddCors(options =>
 {
@@ -54,6 +56,8 @@ app.UseHttpsRedirection();
 
 //Use cors
 app.UseCors("AllowAll");
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
